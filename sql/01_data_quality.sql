@@ -14,4 +14,4 @@ FROM players_profile;
 
 -- Вывод:
 -- Таблица players_profile содержит 3078 записей.
--- NULL и дубликаты по player_id отсутствуют.
+-- NULL, пустые значения и дубликаты по player_id отсутствуют.
