@@ -10,10 +10,9 @@
 
 -- Проверка уникальности идентификаторов игроков
 
-SELECT
-    COUNT(*) AS cnt_players,                    -- общее количество записей
-    COUNT(player_id) AS cnt_players_all,        -- проверка на NULL-значения
-    COUNT(DISTINCT player_id) AS uniq_players   -- проверка на дубликаты
+SELECT COUNT(*) AS cnt_players -- общее количество регистраций
+     , COUNT(player_id) AS cnt_players_all -- проверка наличия регистраций без player_id
+     , COUNT(DISTINCT player_id) AS uniq_players -- проверка наличия игроков, зарегистрированных более одного раза
 FROM planet_hunt.players_profile;
 
 
@@ -31,7 +30,7 @@ FROM planet_hunt.players_profile;
 3. COUNT(DISTINCT player_id)
    Показывает количество уникальных игроков.
    Если значение меньше COUNT(player_id),
-   значит присутствуют дубликаты.
+   значит присутствуют повторные регистрации.
 
 Ожидаемый результат:
 
@@ -40,6 +39,6 @@ cnt_players_all  = 3078
 uniq_players     = 3078
 
 Вывод:
-NULL-значения, пустые значения и дубликаты
+NULL-значения, пустые значения и повторные регистрации
 по player_id отсутствуют.
 */
