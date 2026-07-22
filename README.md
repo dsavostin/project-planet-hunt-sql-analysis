@@ -1,4 +1,4 @@
-# Project: Planet Hunt v.0.3.1
+# Planet Hunt
 
 Анализ продуктовых метрик мобильной игры
 
@@ -34,4 +34,4 @@
 
 ## Инструменты
 
-SQL | DBeaver | Excel | PowerPoint
+SQL | DBeaver | Excel | Google Презентации
