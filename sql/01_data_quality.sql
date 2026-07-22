@@ -5,8 +5,8 @@
 Определить наличие пропусков и повторных регистраций пользователей.
 */
 
-SELECT COUNT(*) AS cnt_players -- общее количество регистраций
-     , COUNT(player_id) AS cnt_players_all -- проверка наличия регистраций без player_id
+SELECT COUNT(*) AS total_records -- общее количество регистраций
+     , COUNT(player_id) AS filled_player_id -- проверка наличия регистраций без player_id
      , COUNT(DISTINCT player_id) AS uniq_players -- проверка на повторные регистрации
 FROM planet_hunt.players_profile;
 
