@@ -21,3 +21,49 @@ FROM planet_hunt.invite_network
 
 Реферальная программа стала дополнительным каналом привлечения игроков.
 */
+
+/*
+Дополнительный анализ активности пользователей реферальной программы
+
+Используется для поиска наиболее активных участников программы
+и пользователей с высокой эффективностью приглашений.
+*/
+
+-- Пользователи, которые чаще всего приглашают друзей
+
+SELECT 
+      player_id
+    , COUNT(*) AS invites_sent
+FROM planet_hunt.invite_network
+GROUP BY player_id
+ORDER BY invites_sent DESC
+LIMIT 50
+
+
+
+-- Пользователи с высокой конверсией приглашений
+
+SELECT 
+      player_id
+    , COUNT(*) AS invites_sent
+    , SUM(friend_reg_flag) AS successful_invites
+    , ROUND(SUM(friend_reg_flag) * 100.0 / COUNT(*)) AS conversion_rate
+FROM planet_hunt.invite_network
+GROUP BY player_id
+HAVING COUNT(*) > 5
+   AND SUM(friend_reg_flag) * 1.0 / COUNT(*) >= 0.5
+ORDER BY conversion_rate DESC
+
+
+
+-- Пользователи с неэффективными приглашениями
+
+SELECT 
+      player_id
+    , COUNT(*) AS invites_sent
+    , SUM(friend_reg_flag) AS successful_invites
+FROM planet_hunt.invite_network
+GROUP BY player_id
+HAVING COUNT(*) > 6
+   AND SUM(friend_reg_flag) = 0
+ORDER BY invites_sent DESC
