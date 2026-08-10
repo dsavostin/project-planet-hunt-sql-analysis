@@ -9,7 +9,7 @@
 
 -- DAU: количество уникальных пользователей за день
 
-SELECT DATE_TRUNC('day', session_start_time) AS day
+SELECT DATE_TRUNC('day', session_start_time)::date AS day
      , COUNT(DISTINCT player_id) AS dau
 FROM planet_hunt.player_activity_log
 GROUP BY day
@@ -18,7 +18,7 @@ ORDER BY day
 
 -- WAU: количество уникальных пользователей за неделю
 
-SELECT DATE_TRUNC('week', session_start_time) AS week
+SELECT DATE_TRUNC('week', session_start_time)::date AS week
      , COUNT(DISTINCT player_id) AS wau
 FROM planet_hunt.player_activity_log
 GROUP BY week
@@ -27,7 +27,7 @@ ORDER BY week
 
 -- MAU: количество уникальных пользователей за месяц
 
-SELECT DATE_TRUNC('month', session_start_time) AS month
+SELECT DATE_TRUNC('month', session_start_time)::date AS month
      , COUNT(DISTINCT player_id) AS mau
 FROM planet_hunt.player_activity_log
 GROUP BY month
