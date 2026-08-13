@@ -107,15 +107,15 @@ SQL-анализ продуктовых метрик мобильной игры
 
 ### DAU / WAU / MAU
 
-![DAU WAU MAU](reports/07_dau_wau_mau.png)
+![DAU WAU MAU](images/07_dau_wau_mau.png)
 
 ### Sticky Factor
 
-![Sticky Factor](images/sticky_factor.png)
+![Sticky Factor](images/07_sticky_factor.png)
 
 ### Когортный анализ выручки
 
-![Cohort Revenue](images/cohort_revenue.png)
+![Cohort Revenue](images/12_cohort_revenue.png)
 
 ---
 
