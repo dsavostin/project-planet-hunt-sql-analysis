@@ -107,7 +107,7 @@ SQL-анализ продуктовых метрик мобильной игры
 
 ### DAU / WAU / MAU
 
-![DAU WAU MAU](images/dau_wau_mau.png)
+![DAU WAU MAU](reports/07_dau_wau_mau.png)
 
 ### Sticky Factor
 
