@@ -113,7 +113,7 @@ SQL-анализ продуктовых метрик мобильной игры
 
 ### Рост пользовательской базы
 
-![Рост регистраций](images/registrations.png)
+![Рост регистраций](images/03_registration_dynamics.png)
 
 ### DAU / WAU / MAU
 
